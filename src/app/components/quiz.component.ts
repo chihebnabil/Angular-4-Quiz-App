@@ -20,13 +20,15 @@ constructor ( private QuizService : QuizService , private route: ActivatedRoute)
 
 
 ngOnInit() {
+     
+     
      this.sub = this.route.params.subscribe(params => {
        // (+) converts string 'id' to a number
       this.id = +params['id'];
       this.QuizService.getQuestion(params['id'])
       .subscribe(
           data => {
-          this.q = data.filter((x, idx, obs) => idx == params['id'] - 1)
+          this.q = data.filter((x, idx, obs) => idx == this.id - 1)
           },
           err => console.error(err)
          )
