@@ -23,14 +23,14 @@ ngOnInit() {
      this.sub = this.route.params.subscribe(params => {
        // (+) converts string 'id' to a number
       this.id = +params['id'];
-      this.QuizService.getQuestion(params['id']).subscribe(
-        data => {
-        this.q = data
-    },
-      err => console.error(err)
-      )
+      this.QuizService.getQuestion(params['id'])
+      .subscribe(
+          data => {
+          this.q = data.filter((x, idx, obs) => idx == params['id'] - 1)
+          },
+          err => console.error(err)
+         )
       
-        
     });
 
   }

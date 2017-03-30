@@ -13,7 +13,6 @@ export class QuizService{
         return this.http.get("assets/q.json").map(res => res.json())
     }
     getQuestion(id): Observable<Question[]> {
-        console.log(id)
         return this.http.get("assets/q.json")
         .map(res => res.json())
        
