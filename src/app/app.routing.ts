@@ -8,6 +8,7 @@ import { PageNotFoundComponent  } from './components/not-found.component';
 const appRoutes: Routes = [
   { path: '', component: QuizComponent },
   { path: ':id', component: QuizComponent },
+  { path: 'score', component: QuizComponent },
   { path: '**', component: PageNotFoundComponent }
 
 ];
