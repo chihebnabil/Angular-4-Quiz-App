@@ -11,17 +11,25 @@ import {Question}  from "./Question"
 })
 
 export class QuizComponent implements OnInit, OnDestroy {
+
 q:Question[];
 sub : any;
 id: number;
+counter : number;
+score : number;
+qNumber : number;
+
 constructor ( private QuizService : QuizService , private route: ActivatedRoute){
   
 }
 
+nextQuestion(){
+  // console.log(this.qNumber)  
+}
+
 
 ngOnInit() {
-     
-     
+ 
      this.sub = this.route.params.subscribe(params => {
        // (+) converts string 'id' to a number
       this.id = +params['id'];
@@ -29,6 +37,7 @@ ngOnInit() {
       .subscribe(
           data => {
           this.q = data.filter((x, idx, obs) => idx == this.id - 1)
+          this.qNumber = data.length
           },
           err => console.error(err)
          )
