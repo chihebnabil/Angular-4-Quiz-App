@@ -3,6 +3,6 @@ export  class  Question {
     type : string;
     image : string;
     audio : string;
-    p : any;
+    p : Array<string> ;
     r : number;
 }

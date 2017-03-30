@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router }  from '@angular/router';
 import {Observable} from 'rxjs/Rx';
 import {Question}  from "./Question"
 
@@ -19,12 +20,15 @@ counter : number;
 score : number;
 qNumber : number;
 
-constructor ( private QuizService : QuizService , private route: ActivatedRoute){
-  
+
+constructor ( private QuizService : QuizService , private route: ActivatedRoute,private router: Router){
+    
 }
 
 nextQuestion(){
   // console.log(this.qNumber)  
+   this.router.navigate(['/'+ (this.id +1) ]);
+  
 }
 
 
@@ -33,8 +37,7 @@ ngOnInit() {
      this.sub = this.route.params.subscribe(params => {
        // (+) converts string 'id' to a number
       this.id = +params['id'];
-      this.QuizService.getQuestion(params['id'])
-      .subscribe(
+      this.QuizService.getQuestion(params['id']).subscribe(
           data => {
           this.q = data.filter((x, idx, obs) => idx == this.id - 1)
           this.qNumber = data.length
