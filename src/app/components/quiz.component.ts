@@ -16,7 +16,7 @@ export class QuizComponent implements OnInit, OnDestroy {
 q:Question[];
 sub : any;
 id: number;
-counter : number;
+cQuestion : number;
 score : number;
 qNumber : number;
 
@@ -25,17 +25,27 @@ constructor ( private QuizService : QuizService , private route: ActivatedRoute,
     
 }
 
-nextQuestion(){
-  // console.log(this.qNumber)  
-   this.router.navigate(['/'+ (this.id +1) ]);
+nextQuestion( ){
   
-}
+   if(this.id == this.qNumber){
+     // when the last Question 
+     this.router.navigate(['/score' ]);
+   }else{
+     // navigate to next Question
+     console.log(this.q)
+     this.router.navigate(['/'+ (this.id +1) ]);
+   }
 
+}
+updateScore(){
+
+}
 
 ngOnInit() {
  
      this.sub = this.route.params.subscribe(params => {
        // (+) converts string 'id' to a number
+       // fetch the file and get next Question
       this.id = +params['id'];
       this.QuizService.getQuestion(params['id']).subscribe(
           data => {
