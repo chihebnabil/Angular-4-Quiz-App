@@ -26,16 +26,15 @@ ngOnInit() {
       this.QuizService.getQuestion(params['id']).subscribe(
         data => {
         this.q = data
-        
-      },
+    },
       err => console.error(err)
-         
-         )
+      )
       
         
     });
 
   }
+  
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
