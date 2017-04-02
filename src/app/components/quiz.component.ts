@@ -47,13 +47,17 @@ ngOnInit() {
        // (+) converts string 'id' to a number
        // fetch the file and get next Question
       this.id = +params['id'];
-      this.QuizService.getQuestion(params['id']).subscribe(
-          data => {
-          this.q = data.filter((x, idx, obs) => idx == this.id - 1)
-          this.qNumber = data.length
-          },
-          err => console.error(err)
-         )
+      
+      if(localStorage.getItem('q') !== null){
+        var data = JSON.parse(localStorage.getItem('q'))
+        console.log(data)
+        this.q = data[this.id - 1]
+      }else{
+         this.QuizService.getQuestion(this.id)
+         var data = JSON.parse(localStorage.getItem('q'))
+         console.log(data)
+         this.q = data[this.id - 1]
+      }
       
     });
 

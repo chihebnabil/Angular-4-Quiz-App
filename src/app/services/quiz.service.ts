@@ -12,9 +12,13 @@ export class QuizService{
     getQuestions(){
         return this.http.get("assets/q.json").map(res => res.json())
     }
-    getQuestion(id): Observable<Question[]> {
+    getQuestion(id) {
         return this.http.get("assets/q.json")
-        .map(res => res.json())
-       
+        .map(res => res.json()).subscribe(
+          data => {
+            localStorage.setItem("q",JSON.stringify(data))
+          },
+          err => console.error(err)
+         )
     }
 }
