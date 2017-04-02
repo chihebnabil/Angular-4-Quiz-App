@@ -1,29 +1,28 @@
-<div class="container"   >
- 
+<div class="container">
+
 
 
   <div class="card">
-  <div class="card-block">
+    <div class="card-block">
       <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=250&h=250" class="thumbnail" alt="">
-<h2>{{q.title}}</h2>
-<form>
-    <fieldset >
-              
-<div class="" *ngFor="let radio of q.p ; let i = index">
-  <label class="custom-control custom-radio">
-    <input id="radioStacked-{{i}}" name="radio-stacked" type="radio" class="custom-control-input">
+      <h2>{{q.title}}</h2>
+      <form >
+        <fieldset>
+
+          <div class="" *ngFor="let radio of q.p ; let i = index">
+            <label class="custom-control custom-radio">
+    <input id="radioStacked-{{i}}" name="radio-stacked"  (change)="VerifyAnswer(radio, $event)"
+  type="radio" class="custom-control-input" #r >
     <span class="custom-control-indicator"></span>
     <span class="custom-control-description">{{radio}}</span>
   </label>
 
+          </div>
+        </fieldset>
+         
+      </form>
+
+    </div>
+
+  </div>
 </div>
-    </fieldset >
-</form>
-
-
-<button type="button" (click)="nextQuestion()" class="btn btn-outline-success">NEXT</button>
-
-   </div>
-
- </div>
-</div> 

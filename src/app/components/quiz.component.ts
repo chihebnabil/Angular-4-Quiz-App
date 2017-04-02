@@ -13,7 +13,7 @@ import { Question } from "./Question"
 
 export class QuizComponent implements OnInit, OnDestroy {
 
-  q: Question[];
+  q:any;
   sub: any;
   id: number;
   cQuestion: number;
@@ -22,23 +22,26 @@ export class QuizComponent implements OnInit, OnDestroy {
 
 
   constructor(private QuizService: QuizService, private route: ActivatedRoute, private router: Router) {
+     this.score = 0;
+  }
+
+  updateScore() {
 
   }
 
-  nextQuestion() {
+  VerifyAnswer(o,e) {
+     if(o == this.q.r){
+       this.score = this.score +  1 
+       console.log('yes')
 
-    if (this.id == this.qNumber) {
+     }
+     if (this.id == this.qNumber) {
       // when the last Question 
       this.router.navigate(['/score']);
     } else {
       // navigate to next Question
-      console.log(this.q)
       this.router.navigate(['/' + (this.id + 1)]);
     }
-
-  }
-  updateScore() {
-
   }
 
   ngOnInit() {
@@ -50,13 +53,13 @@ export class QuizComponent implements OnInit, OnDestroy {
 
       if (localStorage.getItem('q') !== null) {
         var data = JSON.parse(localStorage.getItem('q'))
-        this.qNumber = parseInt(localStorage.getItem('qNumber')) 
+        this.qNumber = parseInt(localStorage.getItem('qNumber'))
         console.log(data)
         this.q = data[this.id - 1]
       } else {
         this.QuizService.getQuestion(this.id)
         var data = JSON.parse(localStorage.getItem('q'))
-        this.qNumber = parseInt(localStorage.getItem('qNumber')) 
+        this.qNumber = parseInt(localStorage.getItem('qNumber'))
         console.log(data)
         this.q = data[this.id - 1]
       }

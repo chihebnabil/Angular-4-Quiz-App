@@ -4,5 +4,5 @@ export  class  Question {
     image : string;
     audio : string;
     p : Array<string> ;
-    r : number;
+    r : string;
 }
