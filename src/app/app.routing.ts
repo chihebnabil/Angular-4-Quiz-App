@@ -7,8 +7,9 @@ import { ScoreComponent  } from './components/score.component';
 import { HomeComponent  } from './components/home.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent ,pathMatch: 'full' },
+  { path: 'score', component: ScoreComponent },
   { path: ':id', component: QuizComponent },
-  { path: 'score', component: ScoreComponent }
+  
 
 ];
 

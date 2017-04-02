@@ -9,12 +9,14 @@ import { Observable } from 'rxjs/Rx';
   templateUrl: './score.component.html'
 })
 export class ScoreComponent implements OnInit, OnDestroy {
-
+  score : any;
   constructor(private route: ActivatedRoute, private router: Router) {
     
   }
 
-    ngOnInit() {}
+    ngOnInit() {
+      this.score = localStorage.getItem('score')
+    }
     ngOnDestroy(){}
 
 }
