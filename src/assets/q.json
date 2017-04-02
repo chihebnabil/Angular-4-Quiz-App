@@ -2,7 +2,7 @@
     {
        "title" : "Virgin Trains, Virgin Atlantic and Virgin Racing, are all companies owned by which famous entrepreneur? ",
        "type"  : "text",
-       "image" : "",
+       "image" : "https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200",
        "audio" : "",
        "p" : [
           "Alan Sugar","Donald Trump","Richard Branson","Bill Gates"
@@ -13,7 +13,7 @@
     {
        "title" : "What is the most common surname Wales?",
        "type"  : "text",
-       "image" : "",
+       "image" : "https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200",
        "audio" : "",
        "p" : [
           "Williams","Davies","Jones"
@@ -24,7 +24,7 @@
     {
        "title" : "What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?",
        "type"  : "text",
-       "image" : "",
+       "image" : "https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200",
        "audio" : "",
        "p" : [
           "Demolition","The Dream Team","The British Bulldogs"
