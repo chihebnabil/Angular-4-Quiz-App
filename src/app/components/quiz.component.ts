@@ -64,5 +64,6 @@ export class QuizComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 }
 
