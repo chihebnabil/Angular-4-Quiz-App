@@ -3,7 +3,7 @@ import { QuizService } from '../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Question } from "./Question"
+
 
 @Component({
   selector: 'quiz',
