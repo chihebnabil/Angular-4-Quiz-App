@@ -13,7 +13,7 @@ import { Question } from "./Question"
 
 export class QuizComponent implements OnInit, OnDestroy {
 
-  q:any;
+  q: any;
   sub: any;
   id: number;
   cQuestion: number;
@@ -22,20 +22,20 @@ export class QuizComponent implements OnInit, OnDestroy {
 
 
   constructor(private QuizService: QuizService, private route: ActivatedRoute, private router: Router) {
-     this.score = 0;
+    this.score = 0;
   }
 
   updateScore() {
 
   }
 
-  VerifyAnswer(o,e) {
-     if(o == this.q.r){
-       this.score = this.score +  1 
-       console.log('yes')
+  VerifyAnswer(o, e) {
+    if (o == this.q.r) {
+      this.score = this.score + 1
+      console.log('yes')
 
-     }
-     if (this.id == this.qNumber) {
+    }
+    if (this.id == this.qNumber) {
       // when the last Question 
       this.router.navigate(['/score']);
     } else {
