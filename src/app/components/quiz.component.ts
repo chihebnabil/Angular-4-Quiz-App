@@ -32,7 +32,7 @@ export class QuizComponent implements OnInit, OnDestroy {
     }
     if (this.id == this.qNumber) {
       // when the last Question 
-      this.router.navigate(['/score']);
+      this.router.navigate(['score']);
     } else {
       // navigate to next Question
       this.router.navigate(['/' + (this.id + 1)]);

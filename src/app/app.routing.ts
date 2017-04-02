@@ -6,10 +6,9 @@ import { PageNotFoundComponent  } from './components/not-found.component';
 import { ScoreComponent  } from './components/score.component';
 import { HomeComponent  } from './components/home.component';
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent ,pathMatch: 'full' },
   { path: ':id', component: QuizComponent },
-  { path: 'score', component: ScoreComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'score', component: ScoreComponent }
 
 ];
 

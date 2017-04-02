@@ -7,7 +7,8 @@ import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'score',
-  templateUrl: 'score.component.html'
+  templateUrl: './score.component.html',
+  providers: [QuizService]
 })
 export class ScoreComponent implements OnInit, OnDestroy {
 
