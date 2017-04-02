@@ -1,35 +1,35 @@
 [
     {
-       "title" : "lorem quiz 1",
+       "title" : "Virgin Trains, Virgin Atlantic and Virgin Racing, are all companies owned by which famous entrepreneur? ",
        "type"  : "text",
        "image" : "",
        "audio" : "",
        "p" : [
-          "1800","1900","1700","1600"
+          "Alan Sugar","Donald Trump","Richard Branson","Bill Gates"
        ],
-       "r"  : "1800"
+       "r"  : "Richard Branson"
 
     },
     {
-       "title" : "lorem quiz 2",
+       "title" : "What is the most common surname Wales?",
        "type"  : "text",
        "image" : "",
        "audio" : "",
        "p" : [
-          "1800","1900","1700","1600"
+          "Williams","Davies","Jones"
        ],
-       "r"  : "1900"
+       "r"  : "Jones"
 
     },
     {
-       "title" : "lorem quiz 3",
+       "title" : "What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?",
        "type"  : "text",
        "image" : "",
        "audio" : "",
        "p" : [
-          "1800","1900","1700","1600"
+          "Demolition","The Dream Team","The British Bulldogs"
        ],
-       "r"  : "1700"
+       "r"  : "Demolition"
 
     }
 ]

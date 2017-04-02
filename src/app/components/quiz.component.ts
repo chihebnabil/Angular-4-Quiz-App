@@ -25,15 +25,10 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.score = 0;
   }
 
-  updateScore() {
-
-  }
 
   VerifyAnswer(o, e) {
     if (o == this.q.r) {
-      this.score = this.score + 1
-      console.log('yes')
-
+      this.score = this.score + 10
     }
     if (this.id == this.qNumber) {
       // when the last Question 
@@ -54,13 +49,11 @@ export class QuizComponent implements OnInit, OnDestroy {
       if (localStorage.getItem('q') !== null) {
         var data = JSON.parse(localStorage.getItem('q'))
         this.qNumber = parseInt(localStorage.getItem('qNumber'))
-        console.log(data)
         this.q = data[this.id - 1]
       } else {
         this.QuizService.getQuestion(this.id)
         var data = JSON.parse(localStorage.getItem('q'))
         this.qNumber = parseInt(localStorage.getItem('qNumber'))
-        console.log(data)
         this.q = data[this.id - 1]
       }
 
