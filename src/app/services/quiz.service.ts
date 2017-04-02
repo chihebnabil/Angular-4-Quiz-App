@@ -17,6 +17,7 @@ export class QuizService {
             .map(res => res.json()).subscribe(
             data => {
                 localStorage.setItem("q", JSON.stringify(data))
+                localStorage.setItem("qNumber", JSON.stringify(data.length))
             },
             err => console.error(err)
             )
