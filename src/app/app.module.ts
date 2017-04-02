@@ -8,13 +8,17 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './components/quiz.component';
 import { PageNotFoundComponent  } from './components/not-found.component';
+import { ScoreComponent  } from './components/score.component';
+import { HomeComponent  } from './components/home.component';
 import {routing} from './app.routing';
  
 @NgModule({
   declarations: [
     AppComponent,
     QuizComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ScoreComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
