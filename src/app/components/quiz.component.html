@@ -6,26 +6,16 @@
   <div class="card-block">
       <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=250&h=250" class="thumbnail" alt="">
 <h2>{{q.title}}</h2>
-       <p>{{q.p}}</p>
 <form>
     <fieldset >
               
-<div class="">
+<div class="" *ngFor="let radio of q.p">
   <label class="custom-control custom-radio">
     <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
     <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Toggle this custom radio</span>
+    <span class="custom-control-description">{{radio}}</span>
   </label>
-  <label class="custom-control custom-radio">
-    <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
-  <label class="custom-control custom-radio">
-    <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Or toggle this other custom radio</span>
-  </label>
+
 </div>
     </fieldset >
 </form>
