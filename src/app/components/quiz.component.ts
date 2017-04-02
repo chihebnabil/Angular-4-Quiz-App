@@ -52,7 +52,7 @@ export class QuizComponent implements OnInit, OnDestroy {
         this.qNumber = parseInt(localStorage.getItem('qNumber'))
         this.q = data[this.id - 1]
       } else {
-        this.QuizService.getQuestion(this.id)
+        this.QuizService.getQuestion()
         var data = JSON.parse(localStorage.getItem('q'))
         this.qNumber = parseInt(localStorage.getItem('qNumber'))
         this.q = data[this.id - 1]

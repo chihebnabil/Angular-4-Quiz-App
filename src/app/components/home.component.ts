@@ -6,14 +6,19 @@ import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'home',
-  templateUrl: 'home.component.html'
+  templateUrl: 'home.component.html',
+  providers: [QuizService]
 })
 
 export class HomeComponent implements OnInit, OnDestroy {
 
+  constructor(private QuizService: QuizService, private route: ActivatedRoute, private router: Router) {
 
+  }
 
-    ngOnInit() {}
-    ngOnDestroy(){}
+  ngOnInit() {
+    this.QuizService.getQuestion()
+  }
+  ngOnDestroy() { }
 
 }

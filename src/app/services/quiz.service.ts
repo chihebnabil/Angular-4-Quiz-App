@@ -8,10 +8,7 @@ export class QuizService {
     constructor(private http: Http) {
     }
 
-    getQuestions() {
-        return this.http.get("assets/q.json").map(res => res.json())
-    }
-    getQuestion(id) {
+    getQuestion() {
         return this.http.get("assets/q.json")
             .map(res => res.json()).subscribe(
             data => {
