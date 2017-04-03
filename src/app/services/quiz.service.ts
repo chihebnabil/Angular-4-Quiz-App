@@ -21,7 +21,7 @@ export class QuizService {
                     data[i] = temp;
                 }
                 localStorage.setItem("q", JSON.stringify(data))
-                localStorage.setItem("qNumber", JSON.stringify(data.length))
+                localStorage.setItem("qNumber", JSON.stringify(data.results.length))
             },
             err => console.error(err)
             )
