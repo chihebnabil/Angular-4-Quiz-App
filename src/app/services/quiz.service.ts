@@ -9,7 +9,7 @@ export class QuizService {
     }
 
     getQuestion() {
-        return this.http.get("https://opentdb.com/api.php?amount=30")
+        return this.http.get("https://opentdb.com/api.php?amount=40")
             .map(res => res.json()).subscribe(
             data => {
                 // shuffle questions
