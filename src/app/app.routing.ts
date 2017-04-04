@@ -9,8 +9,5 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent ,pathMatch: 'full' },
   { path: 'score', component: ScoreComponent },
   { path: ':id', component: QuizComponent },
-  
-
 ];
-
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });
