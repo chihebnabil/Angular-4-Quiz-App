@@ -9,7 +9,7 @@ export class QuizService {
     }
 
     getQuestion() {
-        return this.http.get("assets/q.json")
+        return this.http.get("https://opentdb.com/api.php?amount=40")
             .map(res => res.json()).subscribe(
             data => {
                 // shuffle questions
@@ -21,7 +21,7 @@ export class QuizService {
                     data[i] = temp;
                 }
                 localStorage.setItem("q", JSON.stringify(data))
-                localStorage.setItem("qNumber", JSON.stringify(data.length))
+                localStorage.setItem("qNumber", JSON.stringify(data.results.length))
             },
             err => console.error(err)
             )
