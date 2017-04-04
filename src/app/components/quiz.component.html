@@ -5,16 +5,15 @@
   <div class="card">
     <div class="card-block">
       <img src="{{q.image}}"  class="thumbnail" alt="">
-      <h3 [innerHTML]="q.question"></h3>
-      <p [innerHTML]="q.category"></p>
+      <h3>{{q.title}}</h3>
       <form>
         <fieldset>
 
-          <div class="" *ngFor="let radio of q.incorrect_answers ; let i = index">
+          <div class="" *ngFor="let radio of q.p ; let i = index">
             <label class="custom-control custom-radio">
            <input id="radioStacked-{{i}}" name="radio-stacked"  (change)="VerifyAnswer(radio, $event)" type="radio" class="custom-control-input"  >
            <span class="custom-control-indicator"></span>
-           <span [innerHTML]="radio" class="custom-control-description"></span>
+           <span class="custom-control-description">{{radio}}</span>
          </label>
 
           </div>
