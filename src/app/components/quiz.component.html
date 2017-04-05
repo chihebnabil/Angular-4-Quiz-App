@@ -4,22 +4,17 @@
 
   <div class="card">
     <div class="card-block">
-<<<<<<< HEAD
-      <img src="{{q.image}}" class="thumbnail" alt="">
+
       <h3 [innerHTML]="q.question"></h3>
       <p [innerHTML]="q.category"></p>
-=======
-      <img src="{{q.image}}"  class="thumbnail" alt="">
-      <h3>{{q.title}}</h3>
->>>>>>> 0a1c2d3d5019f9c0b2872b4713c9f620db148dda
       <form>
         <fieldset>
 
-          <div class="" *ngFor="let radio of q.p ; let i = index">
+          <div class="" *ngFor="let radio of q.incorrect_answers ; let i = index">
             <label class="custom-control custom-radio">
            <input id="radioStacked-{{i}}" name="radio-stacked"  (change)="VerifyAnswer(radio, $event)" type="radio" class="custom-control-input"  >
            <span class="custom-control-indicator"></span>
-           <span class="custom-control-description">{{radio}}</span>
+           <span class="custom-control-description" [innerHTML]="radio" ></span>
          </label>
 
           </div>
