@@ -4,8 +4,7 @@
 
   <div class="card">
     <div class="card-block">
-      <img src="{{q.image}}"  class="thumbnail" alt="">
-      <h3>{{q.title}}</h3>
+      <h3 [innerHTML]="q.title"></h3>
       <form>
         <fieldset>
 
@@ -13,7 +12,7 @@
             <label class="custom-control custom-radio">
            <input id="radioStacked-{{i}}" name="radio-stacked"  (change)="VerifyAnswer(radio, $event)" type="radio" class="custom-control-input"  >
            <span class="custom-control-indicator"></span>
-           <span class="custom-control-description">{{radio}}</span>
+           <span class="custom-control-description" [innerHTML]="radio" ></span>
          </label>
 
           </div>
