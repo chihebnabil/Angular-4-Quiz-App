@@ -13,11 +13,14 @@ export class QuizService {
             .map(res => res.json()).subscribe(
             data => {
                 // shuffle questions
-                for (var i = 0; i < data.length - 1; i++) {
-                    var j = i + Math.floor(Math.random() * (data.length - i));
+                for (var i = 0; i < data.results.length - 1; i++) {
+                    var j = i + Math.floor(Math.random() * (data.results.length - i));
 
-                    var temp = data[j];
-                    data[j] = data[i];
+                    var temp = data.results[j];
+                    data[j] = data.results[i];
+                   
+                    data[j].incorrect_answers.push(data[j].correct_answer)
+                   
                     data[i] = temp;
                 }
                 localStorage.setItem("q", JSON.stringify(data))
