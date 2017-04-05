@@ -4,11 +4,13 @@
 
   <div class="card">
     <div class="card-block">
-      <h3 [innerHTML]="q.title"></h3>
+
+      <h3 [innerHTML]="q.question"></h3>
+      <p [innerHTML]="q.category"></p>
       <form>
         <fieldset>
 
-          <div class="" *ngFor="let radio of q.p ; let i = index">
+          <div class="" *ngFor="let radio of q.incorrect_answers ; let i = index">
             <label class="custom-control custom-radio">
            <input id="radioStacked-{{i}}" name="radio-stacked"  (change)="VerifyAnswer(radio, $event)" type="radio" class="custom-control-input"  >
            <span class="custom-control-indicator"></span>
